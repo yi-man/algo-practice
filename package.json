@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "test-one": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --opts ./mocha.single.opts",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --opts ./mocha.opts"
   },
   "devDependencies": {
