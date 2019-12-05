@@ -3,7 +3,7 @@
  * @param arr1 
  * @param arr2 
  */
-export function combineSortedArry(arr1: number[], arr2: number[]) {
+export function combineSortedArray(arr1: number[], arr2: number[]) {
   const ret = []
 
   let i = 0
@@ -34,4 +34,27 @@ export function combineSortedArry(arr1: number[], arr2: number[]) {
   }
 
   return ret
+}
+
+/**
+ * @description 合并有序数组的另一种实现
+ * @param left 左数组
+ * @param right 右数组
+ */
+export const combineSortedArray2 = (left: number[], right: number[]) => {
+  let temp = []
+  let leftIndex = 0
+  let rightIndex = 0
+  // 判断2个数组中元素大小，依次插入数组
+  while (left.length > leftIndex && right.length > rightIndex) {
+      if (left[leftIndex] <= right[rightIndex]) {
+          temp.push(left[leftIndex])
+          leftIndex++
+      } else {
+          temp.push(right[rightIndex])
+          rightIndex++
+      }
+  }
+  // 合并 多余数组
+  return temp.concat(left.slice(leftIndex)).concat(right.slice(rightIndex))
 }

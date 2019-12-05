@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import 'mocha';
-import { combineSortedArry } from './combineSortedArray'
+import { combineSortedArray } from './combineSortedArray'
 
 describe('CombineSortedArray test', () => {
 
@@ -8,7 +8,7 @@ describe('CombineSortedArray test', () => {
     const arr1 = [1, 10, 100, 1000, 10000]
     const arr2 = [2, 20, 200, 2000, 20000]
 
-    const combined = combineSortedArry(arr1, arr2)
+    const combined = combineSortedArray(arr1, arr2)
 
     let str = combined.reduce((acc, item) => {
       return acc ? `${acc}, ${item}` : `${item}`
