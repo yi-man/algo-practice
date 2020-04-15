@@ -1,4 +1,4 @@
-import { combineSortedArray } from '../combineSortedArray'
+import { combineSortedArray } from './combineSortedArray'
 
 export function mergeSort(arr: number[]): number[] {
   const len = arr.length;
