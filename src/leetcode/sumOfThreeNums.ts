@@ -24,6 +24,7 @@ export function sumOfThreeNums(sums: number[]){
     if (v >= targetTotal) {
       break;
     }
+    // 过滤掉相等的值
     if (i > 0 && v === sorted[i - 1]) {
       continue
     }
