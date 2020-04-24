@@ -8,9 +8,27 @@ export function fillNum(m: number, n: number) {
 
   let total = 0;
 
-  for(let i = 0; i < m; i ++) {
-    for(let j = 0; j <= i; j++) {
-      arr[j][i - j] = ++total;
+  // 较大值填完
+  for(let i = 0; i < n; i ++) {
+    for(let j = i; j >= 0; j--) {
+      if ( i >= m) {
+        if ( i - j >= m) {
+          continue;
+        } else {
+          arr[i - j][j] = ++total;
+        }
+      } else {
+        arr[i - j][j] = ++total;
+      } 
+    }
+  }
+
+  const left = m - 1;
+
+  // 剩余反斜角
+  for(let k = left; k > 0; k--) {
+    for(let p = 1; p <= k; p++) {
+      arr[m - k + p - 1][n - p] = ++total;
     }
   }
 

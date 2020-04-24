@@ -8,11 +8,11 @@ describe('fillNum test', () => {
     const result = fillNum(3, 4)
 
     console.log(result)
-    expect(result).to.deep. equal(
+    expect(result).to.deep.equal(
       [
-        [ 4, 0, 0, 0 ],
-        [ 2, 5, 0, 0 ],
-        [ 1, 3, 6, 0 ],
+        [ 1, 2, 4, 7 ],
+        [ 3, 5, 8, 10 ],
+        [ 6, 9, 11, 12 ],
       ]
     )
   })
