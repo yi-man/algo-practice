@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import 'mocha';
 
-import { Node, isBalanceTree, isBalanceTree2 } from './isBalanceTree'
+import { Node, isBalanceTree } from './isBalanceTree'
 
 describe('test if this tree is balance', () => {
   const node1 = new Node(1);
@@ -21,10 +21,9 @@ describe('test if this tree is balance', () => {
   node3.left = node6;
   node3.right = node7;
 
-  it('function isBalanceTree, isBalanceTree2 return true', () => {
+  it('function isBalanceTree return true', () => {
     expect(isBalanceTree(node1)).to.equal(true);
 
-    expect(isBalanceTree2(node1)).to.equal(true);
   })
 
   it('function isBalanceTree, isBalanceTree2 return false', () => {
@@ -33,7 +32,6 @@ describe('test if this tree is balance', () => {
 
     expect(isBalanceTree(node1)).to.equal(false);
 
-    expect(isBalanceTree2(node1)).to.equal(false);
 
   })
 
