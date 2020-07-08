@@ -12,3 +12,31 @@ export function climb(n: number): number {
 
   return climb(n - 1) + climb(n - 2)
 }
+
+export function climb2(n: number): number {
+  if (n === 1) {
+    return 1;
+  }
+  if (n === 2) {
+    return 2;
+  }
+
+  let ret = 0;
+  let pre2 = 1;
+  let pre1 = 2;
+  let i = 3;
+
+  while(i <= n) {
+    let now = pre1 + pre2;
+
+    if (i === n) {
+      ret = now;
+    }
+
+    i++;
+    pre2 = pre1;
+    pre1 = now;
+  }
+
+  return ret;
+}
