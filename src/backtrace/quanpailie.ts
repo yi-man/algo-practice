@@ -3,8 +3,8 @@ export function sort(input: string[]) {
 
   function quanSort(input: string[], prefixStr: string) {
       for (let i = 0; i < input.length; i++) {
-          let first = input[i];
-          let s = prefixStr + first
+          let selected = input[i];
+          let s = prefixStr + selected
           let left = input.slice()
           left.splice(i, 1)
 
