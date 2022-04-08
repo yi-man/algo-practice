@@ -23,8 +23,8 @@ export class TrieTree {
 
   insert (text: string) {
       let node = this.root;
-      for (let char of text) {
-          let index = this.getIndex(char);
+      for (const char of text) {
+          const index = this.getIndex(char);
           if(!node.children[index]) {
               node.children[index] = new TrieNode(char);
           }
@@ -37,8 +37,8 @@ export class TrieTree {
   find (text: string) {
       let node = this.root;
 
-      for(let char of text) {
-          let index = this.getIndex(char);
+      for(const char of text) {
+          const index = this.getIndex(char);
           if(node.children[index]) {
               node = node.children[index];
           } else {

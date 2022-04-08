@@ -1,6 +1,6 @@
 function longestPalindrome(s: string) {
   const length = s.length;
-  const P = new Array();
+  const P = [];
   
   for(let i = 0; i < length; i++) {
     P.push(new Array(length).fill(0))
@@ -11,7 +11,7 @@ function longestPalindrome(s: string) {
 
   for (let len = 1; len <= length; len++) {//遍历所有的长度
     for (let start = 0; start < length; start++) {
-      let end = start + len - 1;
+      const end = start + len - 1;
       if (end >= length) //下标已经越界，结束本次循环
         break;
   

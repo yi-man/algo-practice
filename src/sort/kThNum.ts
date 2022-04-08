@@ -16,7 +16,7 @@ export function kthNum(arr: number[], k: number) {
 
 function partition(arr: number[], start: number, end: number) {
   let i = start;
-  let pivot = arr[end];
+  const pivot = arr[end];
   for (let j = start; j < end; j++) {
     if (arr[j] < pivot) {
       swap(arr, i, j);
@@ -29,7 +29,7 @@ function partition(arr: number[], start: number, end: number) {
 
 function swap(arr: number[], i: number, j: number) {
   if (i === j) return;
-  let tmp = arr[i];
+  const tmp = arr[i];
   arr[i] = arr[j];
   arr[j] = tmp;
 }

@@ -6,10 +6,10 @@ import { TrieTree } from './letter'
 describe('letter tireTree test', () => {
 
   it('letter tireTree insert and find test')
-  var tree = new TrieTree();
+  const tree = new TrieTree();
 
-  var strs = ["how", "hi", "her", "hello", "so", "see"];
-  for(let str of strs) {
+  const strs = ["how", "hi", "her", "hello", "so", "see"];
+  for(const str of strs) {
     tree.insert(str);
   }
 

@@ -33,7 +33,7 @@ export function judge(input: number[]){
   const found = groupArr.filter(arr => arr.length >= 5);
 
   if (found.length > 0) {
-    for (let values of found) {
+    for (const values of found) {
       values.sort((a, b) => a - b);
 
       for (let i = 0; i <= values.length - 5; i++) {

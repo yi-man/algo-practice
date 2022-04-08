@@ -27,7 +27,7 @@ export function climb2(n: number): number {
   let i = 3;
 
   while(i <= n) {
-    let now = pre1 + pre2;
+    const now = pre1 + pre2;
 
     if (i === n) {
       ret = now;

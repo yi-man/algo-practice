@@ -10,7 +10,7 @@ describe('CombineSortedArray test', () => {
 
     const combined = combineSortedArray(arr1, arr2)
 
-    let str = combined.reduce((acc, item) => {
+    const str = combined.reduce((acc, item) => {
       return acc ? `${acc}, ${item}` : `${item}`
     }, '')
 

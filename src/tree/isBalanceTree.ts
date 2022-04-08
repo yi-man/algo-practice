@@ -11,7 +11,7 @@ export class Node {
 export const isBalanceTree = (root: Node) => {
   if (!root) return true;
 
-  let ret: boolean = true;
+  let ret = true;
   height(root);
 
   return ret;

@@ -1,11 +1,11 @@
 export function sort(input: string[]) {
-  let final: string[] = []
+  const final: string[] = []
 
   function quanSort(input: string[], prefixStr: string) {
       for (let i = 0; i < input.length; i++) {
-          let selected = input[i];
-          let s = prefixStr + selected
-          let left = input.slice()
+          const selected = input[i];
+          const s = prefixStr + selected
+          const left = input.slice()
           left.splice(i, 1)
 
           if (left.length > 0) {
@@ -22,10 +22,10 @@ export function sort(input: string[]) {
 }
 
 export const permute = function(nums: string[]) {
-    let n = nums.length;
-    let res: string[][] = [];
-    let tmpPath: string[] = [];
-    let backtrack = (tmpPath: string[]) => {
+    const n = nums.length;
+    const res: string[][] = [];
+    const tmpPath: string[] = [];
+    const backtrack = (tmpPath: string[]) => {
         if(tmpPath.length == n){
             res.push(tmpPath);
             return;
@@ -43,7 +43,7 @@ export const permute = function(nums: string[]) {
 };
 
 export function permute2 (nums: string[]) {
-    let res: string[][] = []
+    const res: string[][] = []
     perm(nums, 0, nums.length - 1, res)
     return res
   }
@@ -67,7 +67,7 @@ export function permute2 (nums: string[]) {
   }
 
   function swap (arr: string[], p: number, q: number) {
-    let temp = arr[p]
+    const temp = arr[p]
     arr[p] = arr[q]
     arr[q] = temp
   }

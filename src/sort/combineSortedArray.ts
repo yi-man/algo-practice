@@ -42,7 +42,7 @@ export function combineSortedArray(arr1: number[], arr2: number[]) {
  * @param right 右数组
  */
 export const combineSortedArray2 = (left: number[], right: number[]) => {
-  let temp = []
+  const temp = []
   let leftIndex = 0
   let rightIndex = 0
   // 判断2个数组中元素大小，依次插入数组

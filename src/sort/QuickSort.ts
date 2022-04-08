@@ -21,8 +21,8 @@ const partition = (arr: number[], pivot: number, left: number, right: number) =>
 
 export const quickSort = (arr: number[], left: number, right: number) => {
   if (left < right) {
-      let pivot = right
-      let partitionIndex = partition(arr, pivot, left, right)
+      const pivot = right
+      const partitionIndex = partition(arr, pivot, left, right)
       quickSort(arr, left, partitionIndex - 1 < left ? left : partitionIndex - 1)
       quickSort(arr, partitionIndex + 1 > right ? right : partitionIndex + 1, right)
   }
