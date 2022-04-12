@@ -1,3 +1,4 @@
+import { Node } from "./node"
 /**
  * 二叉树的增删查操作
  */
@@ -103,15 +104,5 @@ export class TreeSearch {
     console.log(node.data)
     this.printAll(node.left)
     this.printAll(node.right)
-  }
-}
-
-export class Node {
-  data: number
-  left?: Node
-  right?: Node
-
-  constructor(data: number) {
-    this.data = data
   }
 }
