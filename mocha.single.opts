@@ -1,4 +1,4 @@
 --require ts-node/register
 --require source-map-support/register
 --recursive
-src/tree/treeSearch.spec.ts
+src/dynamic/huiwen.spec.ts
