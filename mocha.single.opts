@@ -1,4 +1,4 @@
 --require ts-node/register
 --require source-map-support/register
 --recursive
-src/leetcode/longestValidParentheses.spec.ts
+src/leetcode/combinationSum.spec.ts
