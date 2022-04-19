@@ -66,9 +66,32 @@ export function permute2 (nums: string[]) {
     }
   }
 
-  function swap (arr: string[], p: number, q: number) {
+  function swap (arr: string[] | number[], p: number, q: number) {
     const temp = arr[p]
     arr[p] = arr[q]
     arr[q] = temp
   }
 
+
+export function permuteUnique(nums: number[]): number[][] {
+  const res: number[][] = []
+  const memo = {}
+  perm3(nums, 0, nums.length - 1, res, memo)
+  return res
+}
+
+function perm3 (arr: number[], start: number, end: number, res: number[][], memo: {[key: string]: boolean}) {
+  if (start === end) {
+    const k = arr.join('')
+    if (!memo[k]){
+      res.push([...arr])
+      memo[k] = true
+    }
+  } else {
+    for (let i = start; i <= end; i++) {
+      swap(arr, i, start)
+      perm3(arr, start + 1, end, res, memo)
+      swap(arr, i, start)
+    }
+  }
+}
