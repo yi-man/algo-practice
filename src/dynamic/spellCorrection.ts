@@ -7,8 +7,6 @@
  * @param input 
  * @param target 
  */
-
-
 export function getMinEditDistance(input: string, target: string): number {
   let minDist = Infinity
 
