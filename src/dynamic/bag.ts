@@ -13,12 +13,12 @@ export function bag(items: number[], w: number) {
 
   for (let i = 1; i < len; i++) {
     for (let j = 0; j < w+1; j++) {
-      if (states[i-1][j] == true) {
+      if (states[i-1][j] === true) {
         states[i][j] = states[i-1][j]
       } 
     }
     for (let j = 0; j <= w-items[i]; j++) {
-      if (states[i-1][j]==true){
+      if (states[i-1][j]===true){
         states[i][j+items[i]] = true
       } 
     }

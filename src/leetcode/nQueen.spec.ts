@@ -29,7 +29,6 @@ const queen8 =[
   ]
 ]
 
-
 describe('nQueen test', () => {
 
   it('8 queen', () => {
