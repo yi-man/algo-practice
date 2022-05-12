@@ -15,7 +15,7 @@ export function getMinEditDistance(input: string, target: string): number {
       if(targetPos < target.length) {
         dis = dis + (target.length - targetPos)
       }
-      if (inputPos < target.length) {
+      if (inputPos < input.length) {
         dis = dis + (input.length - inputPos)
       }
       if(minDist > dis) { minDist = dis }
@@ -46,6 +46,11 @@ export function getMinEditDistance(input: string, target: string): number {
 export function lwstDP(a: string, b: string) {
   const n = a.length
   const m = b.length
+
+  if(n === 0 || m === 0) {
+    return Math.max(n, m)
+  }
+
   const minDist = new Array(n).fill(0).map(() => new Array(m).fill(0))
 
   for (let i = 0; i < n; ++i) { // 初始化第0列:a[0..i]与b[0..0]的编辑距离
