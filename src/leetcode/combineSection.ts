@@ -42,7 +42,6 @@ export function insert(intervals: number[][], newInterval: number[]) {
         // 与插入区间有交集，计算它们的并集
         left = Math.min(left, interval[0]);
         right = Math.max(right, interval[1]);
-        ansList[ansList.length-1] = [left, right]
     }
   }
   if (!placed) {
