@@ -1,4 +1,4 @@
 --require ts-node/register
 --require source-map-support/register
 --recursive
-src/interview/rangeList.spec.ts
+src/leetcode/sumOfDistancesInTree.spec.ts
