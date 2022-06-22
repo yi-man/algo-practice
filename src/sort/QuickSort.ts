@@ -32,19 +32,19 @@ const partition = (arr: number[], pivot: number, left: number, right: number) =>
 }
 
 // swap from begining
-// const partition = (arr: number[], pivot: number, left: number, right: number) => {
-//   const pivotVal = arr[pivot]
-//   // 记录小于 pivotVal的索引
-//   let smallIndex = left
-//   for (let i = left; i < right; i++) {
-//       if (arr[i] < pivotVal) {
-//           swap(arr, i, smallIndex)
-//           smallIndex++
-//       }
-//   }
-//   swap(arr, smallIndex, pivot)
-//   return smallIndex
-// }
+const divide = (arr: number[], pivot: number, left: number, right: number) => {
+  const pivotVal = arr[pivot]
+  // 记录小于 pivotVal的索引
+  let smallIndex = left
+  for (let i = left; i < right; i++) {
+      if (arr[i] < pivotVal) {
+          swap(arr, i, smallIndex)
+          smallIndex++
+      }
+  }
+  swap(arr, smallIndex, pivot)
+  return smallIndex
+}
 
 
 export const quickSort = (arr: number[], l?: number, r?: number) => {

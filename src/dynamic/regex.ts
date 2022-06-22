@@ -49,29 +49,29 @@ export class FakeRegex {
     const m=s.length;
     const n=p.length;
 
-    const dp = new Array(m + 1).fill(0).map(() => new Array(n + 1).fill(false));
+    const states = new Array(m + 1).fill(0).map(() => new Array(n + 1).fill(false));
 
-    dp[0][0]=true;
+    states[0][0]=true;
 
     for(let i=1;i<=m;i++){
         for(let j=1;j<=n;j++){
           // 字符相等
             if(s[i-1]==p[j-1] || p[j-1]=='.'){
-                dp[i][j]=dp[i-1][j-1];
+                states[i][j]=states[i-1][j-1];
             } else if(p[j-1]=='*'){
               // 如果s[i-1]不等于p[j-2] 且 p[j-2]不是'.'， 舍弃 j-1, j-2
                 if(s[i-1]!=p[j-2] ) {
                   if (p[j-2]!='.') {
-                    dp[i][j]=dp[i][j-2];
+                    states[i][j]=states[i][j-2];
                   } else {
-                    dp[i][j] = dp[i][j-2] || dp[i-1][j]
+                    states[i][j] = states[i][j-2] || states[i-1][j]
                   }
                 } else {
-                    dp[i][j]=dp[i][j-1] || dp[i][j-2];
+                    states[i][j]=states[i][j-1] || states[i][j-2];
                 }
             }
         }
     }
-    return dp[m][n];
+    return states[m][n];
   }
 }

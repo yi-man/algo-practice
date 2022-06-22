@@ -35,11 +35,12 @@ export function canJump(nums: number[]): boolean {
 
 export function canJump2(nums:number[]):boolean{
   const n = nums.length;
-  let rightmost = 0;
+  let maxRight = 0;
+  
   for (let i = 0; i < n; ++i) {
-      if (i <= rightmost) {
-          rightmost = Math.max(rightmost, i + nums[i]);
-          if (rightmost >= n - 1) {
+      if (i <= maxRight) {
+          maxRight = Math.max(maxRight, i + nums[i]);
+          if (maxRight >= n - 1) {
               return true;
           }
       }
