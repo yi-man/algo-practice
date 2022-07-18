@@ -39,5 +39,5 @@ export function isValid(s:string) {
     }
   }
 
-  return true
+  return stack.length === 0
 }
