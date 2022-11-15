@@ -3,17 +3,23 @@ lockfileVersion: 5.4
 specifiers:
   '@types/chai': ^4.2.5
   '@types/mocha': ^5.2.7
+  '@types/node': ^18.11.9
   '@typescript-eslint/eslint-plugin': ^5.18.0
   '@typescript-eslint/parser': ^5.18.0
+  acorn: ^8.8.1
   chai: ^4.2.0
   eslint: ^8.12.0
   mocha: ^6.2.2
   ts-node: ^8.5.2
   typescript: ^3.7.2
 
+dependencies:
+  acorn: 8.8.1
+
 devDependencies:
   '@types/chai': registry.npmmirror.com/@types/chai/4.3.0
   '@types/mocha': registry.npmmirror.com/@types/mocha/5.2.7
+  '@types/node': 18.11.9
   '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.18.0_h4hz67boyu2xy2lsnr4hpvggaa
   '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.18.0_3dctahuysu5br3xx4wknkdpk4e
   chai: registry.npmmirror.com/chai/4.3.6
@@ -23,6 +29,15 @@ devDependencies:
   typescript: registry.npmmirror.com/typescript/3.9.10
 
 packages:
+
+  /@types/node/18.11.9:
+    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
+    dev: true
+
+  /acorn/8.8.1:
+    resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
 
   registry.npmmirror.com/@eslint/eslintrc/1.2.1:
     resolution: {integrity: sha512-bxvbYnBPN1Gibwyp6NrpnFzA3YtRL3BBAyEAFVIpNTm2Rn4Vy87GA5M4aSn3InRrlsbX5N0GW7XIx+U4SAEKdQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@eslint/eslintrc/-/eslintrc-1.2.1.tgz}
@@ -254,7 +269,7 @@ packages:
       eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys/3.3.0
     dev: true
 
-  registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.7.0:
+  registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz}
     id: registry.npmmirror.com/acorn-jsx/5.3.2
     name: acorn-jsx
@@ -262,15 +277,7 @@ packages:
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: registry.npmmirror.com/acorn/8.7.0
-    dev: true
-
-  registry.npmmirror.com/acorn/8.7.0:
-    resolution: {integrity: sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn/-/acorn-8.7.0.tgz}
-    name: acorn
-    version: 8.7.0
-    engines: {node: '>=0.4.0'}
-    hasBin: true
+      acorn: 8.8.1
     dev: true
 
   registry.npmmirror.com/ajv/6.12.6:
@@ -771,8 +778,8 @@ packages:
     version: 9.3.1
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: registry.npmmirror.com/acorn/8.7.0
-      acorn-jsx: registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.7.0
+      acorn: 8.8.1
+      acorn-jsx: registry.npmmirror.com/acorn-jsx/5.3.2_acorn@8.8.1
       eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys/3.3.0
     dev: true
 
