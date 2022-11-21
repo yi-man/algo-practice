@@ -22,7 +22,7 @@ export class Node{
   }
 }
 
-export const toplogy = (nodes: Array<Node>)=>{
+export const topology = (nodes: Array<Node>)=>{
   const queen: Array<Node> = []
   const result: number[] = []
 
@@ -52,10 +52,10 @@ export const toplogy = (nodes: Array<Node>)=>{
       const dep = node.deps[i]; 
 
       if(inDegree.get(dep) as number > 0){
-        const newDgree = inDegree.get(dep) as number - 1
-        inDegree.set(dep, newDgree);
+        const newDegree = inDegree.get(dep) as number - 1
+        inDegree.set(dep, newDegree);
   
-        if(newDgree === 0) {
+        if(newDegree === 0) {
           queen.push(dep)
         }
       }

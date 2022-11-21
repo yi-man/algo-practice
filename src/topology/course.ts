@@ -28,7 +28,7 @@ export function canArrange(numCourses: number, prerequisites: Array<[number, num
       if (onPath[s]) {
         // 发现环！！！
         hasCycle = true;
-     }
+      }
       if (visited[s]  || hasCycle) {
           return;
       }
@@ -41,8 +41,8 @@ export function canArrange(numCourses: number, prerequisites: Array<[number, num
           traverse(graph, t);
       }
       /* 后序遍历代码位置 */
-       // 节点 s 遍历完成
-    onPath[s] = false;
+      // 节点 s 遍历完成
+      onPath[s] = false;
   }
 
 

@@ -17,25 +17,9 @@ export class Heap{
    */
   private heapify(data: number[], i: number) {
     let current = i
-    const n = data.length
 
     while(true) {
-      let max = current
-
-      const left = 2*current + 1
-      const right = 2*current + 2
-
-      if (left > n && right > n) {
-        break
-      }
-
-      if (left <= n && data[max] < data[left]) {
-        max = left
-      }
-
-      if (right <= n && data[max] <  data[right]) {
-        max = right
-      }
+      const max = this._getMax(data, current)
 
       if (max === current) {
         break
@@ -59,7 +43,7 @@ export class Heap{
     return newArr
   }
 
-  getMax(data: number[], current: number) {
+  _getMax(data: number[], current: number) {
     const n = data.length
     let max = current
     const left =  2*current + 1
@@ -87,7 +71,7 @@ export class Heap{
     let current = startIndex
 
     while (current >= 0) {
-      const max = this.getMax(this.data, current)
+      const max = this._getMax(this.data, current)
 
       if (max === current) {
         break

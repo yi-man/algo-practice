@@ -27,6 +27,6 @@ export const isBalanceTree = (root: Node) => {
       ret = false
     }
   
-    return Math.max(height(node.left), height(node.right)) + 1;
+    return Math.max(lh, rh) + 1;
   }
 }
