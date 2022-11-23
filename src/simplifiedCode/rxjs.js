@@ -1,3 +1,4 @@
+// https://juejin.cn/post/7003328753556258846
 function pipeFromArray(fns) {
   if (fns.length === 0) {
       return (x) => x;
