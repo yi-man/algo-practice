@@ -23,32 +23,4 @@ export function isValidBST(root: TreeNode) {
   return helper(root, -Infinity, Infinity);
 }
 
-const swap = (x: TreeNode, y: TreeNode) => {
-  const temp = x.val;
-  x.val = y.val;
-  y.val = temp;
-}
 
-export function recoverTree (root: TreeNode | null) {
-  const stack = [];
-  let x = null, y = null, pred = null;
-
-  let current = root
-  while (stack.length || root !== null) {
-    while (current !== null) {
-      stack.push(current);
-      current = current.left;
-    }
-    current = stack.pop() as TreeNode;
-    if (pred !== null && current.val < pred.val) {
-      y = current;
-      if (x === null) {
-          x = pred;
-      }
-      else break;
-    }
-    pred = current;
-    current = current.right;
-  }
-  swap(x as TreeNode, y as TreeNode);
-}
