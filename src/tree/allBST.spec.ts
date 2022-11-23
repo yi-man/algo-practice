@@ -1,11 +1,9 @@
 import { expect } from 'chai'
 import 'mocha';
 
-import { findAllBST } from './allBST'
+import { findAllBST, getAllBSTCount } from './allBST'
 
 describe('findAllBST', () => {
-  
-
   it('n = 3', () => {
     expect(findAllBST(3)).to.deep.equal([[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]])
   })
@@ -14,7 +12,11 @@ describe('findAllBST', () => {
     expect(findAllBST(1)).to.deep.equal([[1]])
   })
 
-  
+})
 
+describe('getAllBSTCount', () => {
+  it('n = 3', () => {
+    expect(getAllBSTCount(3)).to.equal(5)
+  })
 
 })
