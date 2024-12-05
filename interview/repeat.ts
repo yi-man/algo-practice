@@ -35,5 +35,33 @@ function getLongestUniqueSubstring(s: string): number {
 }
 
 // console.log(getLongestUniqueSubstring("bwac"));
-console.log(getLongestUniqueSubstring("awwabwac"));
+// console.log(getLongestUniqueSubstring("awwabwac"));
 // console.log(getLongestUniqueSubstring("abrtyuiaabcaa"));
+
+function merge(
+  nums1: number[],
+  m: number,
+  nums2: number[],
+  n: number
+): number[] {
+  let l = m + n - 1;
+  let p1 = m - 1;
+  let p2 = n - 1;
+
+  while (p1 >= 0 || p2 >= 0) {
+    if (nums1[p1] > nums2[p2]) {
+      nums1[l--] = nums1[p1--];
+    } else {
+      nums1[l--] = nums2[p2--];
+    }
+  }
+
+  console.log(l, p1, p2);
+  while (p2 >= 0 && l >= 0) {
+    nums1[l--] = nums2[p2--];
+  }
+
+  return nums1;
+}
+
+console.log(merge([0], 0, [1], 1));
