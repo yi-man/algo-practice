@@ -1,4 +1,4 @@
-function staffNumber(x: number, y: number) {
+function staffNumber(x: number, y: number): number {
   const yBase = 26;
   let prefixCount = 1;
 
