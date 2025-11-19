@@ -26,37 +26,36 @@ costs[i].length == k
 1 <= costs[i][j] <= 20 
 
  */
-export function pantHouse(costs: number[][]): number {
-  let max = Infinity
-
-  if(!costs || costs.length === 0) {
-    return 0
+export function paintHouse(costs: number[][]): number {
+  if (!costs || costs.length === 0) {
+    return 0;
   }
 
-  // 房子个数
-  const len = costs.length
-  // 颜色个数
-  const colorLen = costs[0].length
+  const n = costs.length; // 房子个数
+  const k = costs[0].length; // 颜色个数
 
-  const dp: number[][] = new Array(len).fill(0).map(() => new Array(colorLen).fill(0))
+  // dp[i][j] 表示粉刷前 i 个房子，且第 i 个房子使用颜色 j 的最小成本
+  const dp: number[][] = new Array(n).fill(0).map(() => new Array(k).fill(0));
 
-  for(let i = 0; i < len; i++) {
-    for(let j = 0; j < colorLen; j++) {
-      if(i === 0) {
-        dp[i][j] = costs[i][j]
-      } else {
-        dp[i][j] = Math.min(dp[i-1][j], dp[i-1][j-1]) + costs[i][j]
+  // 初始化：第一个房子用每种颜色的成本
+  for (let j = 0; j < k; j++) {
+    dp[0][j] = costs[0][j];
+  }
+
+  // 填充 dp 数组
+  for (let i = 1; i < n; i++) {
+    for (let j = 0; j < k; j++) {
+      // 找到前一个房子使用除 j 以外所有颜色的最小成本
+      let minPrev = Infinity;
+      for (let prevColor = 0; prevColor < k; prevColor++) {
+        if (prevColor !== j) {
+          minPrev = Math.min(minPrev, dp[i - 1][prevColor]);
+        }
       }
+      dp[i][j] = minPrev + costs[i][j];
     }
   }
 
-
-  // function huisu(prevColorIndex: number, houseIndex: number, cost: number){
-  //   for(let i = houseIndex; i < len; i++) {
-      
-  //   }
-  // }
-
-  
-
+  // 返回最后一个房子使用所有颜色中的最小成本
+  return Math.min(...dp[n - 1]);
 }
