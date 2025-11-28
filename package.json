@@ -6,7 +6,7 @@
   "scripts": {
     "test-one": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --opts ./mocha.single.opts",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --opts ./mocha.opts",
-    "code": "ts-node ./src/leetcode/semiOrderedPermutation.ts",
+    "code": "ts-node ./src/leetcode/3381_maxSubarraySum.ts",
     "interview": "ts-node ./interview/test.ts",
     "lint": "eslint --ext .ts src/ --fix"
   },
