@@ -1,5 +1,5 @@
 // 基本的二叉树节点
-class TreeNode {
+export class TreeNode {
   constructor(val: number) {
     this.val = val;
     this.left = null;
